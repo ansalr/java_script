@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    
+        <h2>Sum of two Number</h2>
+        Input 1 :
+        <input type="number" id="num1" placeholder="number"><br>
+        Input 2 :
+        <input type="number" id="num2" placeholder="number"><br>
+        <button onclick="add()">Add</button>
+        <p id="add">Result</p>
+
+    
+        <h2>Generate Randome Number </h2>
+        input :
+        <input type="number" id="input" placeholder="number"><br>
+        <button onclick="check1()">check</button>
+        <p id="score">score 10</p>
+        <p id="rand">Result</p>
+
+        
+    <style>
+        div{
+            background: #e07f7f;
+            width: 400px;
+            height: 400px;
+        }
+        .widthmax{
+            width: 1849px;
+            height: 500px;
+        }
+    </style>
+    <h1>change colour and dimension of div</h1>
+    <div id="colour"></div>
+    <button onclick="col()">change colour,dim</button><br>
+    <br>
+    <h2>update input dynamicaly onkeyup</h2>
+    <input id="update" onkeyup="update()">
+    <button onclick="update()">update</button>
+    <p id="type"></p>
+    <br>
+    <h2>print input content in sequence</h2>
+    <button onclick="sequence()">add</button>
+    <h2 id="seq">seq</h2>
+    <br>
+    <h1>change button colour</h1>
+    <button id="change" onclick="change()">change btn colour</button>
+    <br>
+    <h1 id="multbtn"> hi</h1>
+    <button onclick="multbtn(event)">ansal</button>
+    <button onclick="multbtn(event)">Rahul</button>
+    <button onclick="multbtn(event)">Nivine</button>
+    <br>
+    <h2>Remove content if clicked</h2>
+    <h1 onclick="del(event)">one</h1>
+    <h1 onclick="del(event)">two</h1>
+    <h1 onclick="del(event)">three</h1>
+    <h1 onclick="del(event)">four</h1>
+    <h1 onclick="del(event)">five</h1>
+    <br>
+
+
+
+
+
+
+    <script>
+        function add() {
+            let n1 = document.getElementById("num1")
+            let n2 = document.getElementById("num2")
+            let re = document.getElementById("add")
+            let result = Number(n1.value) + Number(n2.value)
+            re.textContent = result
+        }
+        var initial = 10 
+        function check1(){
+            let n1 = document.getElementById("input")
+            let win = document.getElementById("score")
+            let result = document.getElementById("rand")
+            let random = Math.floor(Math.random()*10)
+            console.log(random);
+            if (Number(n1.value) === random){
+                result.textContent ="you are correct"
+                ++initial
+                alert("you won")
+            }else{
+                --initial
+                win.textContent = initial
+                result.textContent = "you are wrong"
+                }
+            }
+
+        function col(){
+            let colour = document.getElementById("colour");
+            colour.style.background = "#3fc1a2"
+            colour.setAttribute("class","widthmax")
+        }
+
+        function update(){
+            let input = document.getElementById("update")
+            let update = document.getElementById("type")
+            update.textContent = input.value
+        }
+        function sequence(){
+            let inp = document.getElementById("seq")
+            let h1 = document.createElement("h2")
+            h1.textContent = "hellow"
+            inp.append(h1);
+            }
+        function change(){
+            let btn = document.getElementById("change")
+            btn.style.backgroundColor = "#3fc1a2"
+        }
+        function multbtn(event){
+            var h1=document.getElementById("multbtn")
+            console.log(event)
+            h1.textContent = event.target.textContent
+        }
+        function del(event){
+            event.target.remove()
+        }
+        
+
+
+    </script>
+</body>
+
+</html>
