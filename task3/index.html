@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link  rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <form id='form'>
+    <h2>Billing page validation</h2>
+    <div id="container">
+     <div id="id-1">
+        <span class="error">*</span><input id="cardNumber" name="cardNumber" type="text" maxlength="16" placeholder="credit card number"/><br/><br/>
+        <label for="expiryMonth"><span class="error">*</span>expires:</lebel>
+        <select id="expiryMonth" name="expiryMonth">
+            <option value="">MM</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>   
+            <option value="5">5</option>   
+            <option value="6">6</option>   
+            <option value="7">7</option>   
+            <option value="8">8</option>   
+            <option value="9">9</option>   
+            <option value="10">10</option>   
+            <option value="11">11</option>   
+            <option value="12">12</option>   
+               
+        </select>
+        <span><select id="expiryYear" name="expiryYear">
+            <option value="">YY</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>   
+            <option value="2028">2028</option>   
+            <option value="2029">2029</option>   
+            <option value="2030">2030</option>   
+            <option value="2031">2031</option>   
+            <option value="2032">2032</option>   
+            <option value="2033">2033</option>   
+            <option value="2034">2034</option>   
+            <option value="2035">2035</option>
+        </select></span><br/><br/>
+        <span class="error">*</span>card holder:</lebel>
+        <input id="cardholder" name="cardholder" type="text"/> 
+     </div>
+     <br/><br/>
+     <div id="id-2">
+       
+       <label for="cvv"><span class="error">*</span>CVV:</label>
+       <span><input id="cvv" name="cvv" type="password" maxlength="3"/></span> 
+     </div>
+     </div>
+     <div id="id-3">
+       <div id="heading">
+        <h2>enter your billing address</h2></div>
+       <span><span class="error">*</span><input id="first-name" name="first_name" type="text" placeholder="First Name"/>
+       <span class="error">*</span><input id="last_name" name="last_name" type="text" placeholder="Last Name"/></span>
+        <br/><br/>
+        <span><span class="error">*</span><input id="address"  name="address" type="text" placeholder="Address"/> <br><br/>
+
+    <label for="country"><span class="error">*</span>Country</label>
+    <select id="country" name="country">
+      <option value="">Select</option>
+      <option value="india">india</option>
+      <option value="USA">USA</option>
+      <option value="Kenya">Kenya</option>
+      <option value="Bangladesh">Bangladesh</option>
+      <option value="Bahrain">Bahrain</option>
+      <option value="Brazil">Brazil</option>
+    </select><br><br>
+        
+        <span class="error">*</span><input id="city" name="city" type="text" placeholder="City"/><br><br>
+        
+        <span class="error">*</span><input id="postal-code" name="postal_code" type="text" maxlength="6" placeholder="Postal Code"/><br><br>
+        
+        <span class="error">*</span><input id="phone" name="phone" type="text" maxlength="10" placeholder="Phone"/><br><br>
+        
+        <input id="business-name" name="business_name" type="text" placeholder="Business Name"/>
+        
+        <hr id="dot"/>
+        <div><span class="error">*</span>Marked fields are mandatory</div><br>
+        <div>
+            <input id="agree_document" name="agree_document" type="checkbox"/>
+            i agree to the terms and conditions
+        </div><br/>
+        <label>Captcha: <span id="captchaText" class="captcha-text"></span></label>
+        <button type="button" onclick="generateCaptcha(event)">Refresh</button><br>
+        <input  type="text" id="captcha" name="captcha"><br>
+        <div id="captchaError" class="error"></div><br>
+        <button id="btn" type="button" onclick="validateForm(event)"><b>PLACE THE ORDER</b></button>
+     </div>
+    </form>
+
+    
+ <script src="form.js"></script>   
+</body>
+</html>
