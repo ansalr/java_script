@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration Form</title>
+  <script src="script.js"></script>
+</head>
+<style>
+  .error {
+    color: red;
+  }
+  .captcha-text {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+  }
+  .captcha-text::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: black;
+    top: 50%;
+    left: 0;
+  }
+</style>
+  <h1>Employee Registration Form</h1>
+  <form id="form" >
+    <div>
+      <input type="text" id="first-name" name="first_name" placeholder="First Name *"  onkeypress="return checkAlphabets(event)">
+      <input type="text" id="email" name="email" placeholder="Email *" >
+      <br>
+    </div>
+    <div>
+      <input type="text" id="last-name" name="last_name" placeholder="Last Name *" onkeypress="return checkAlphabets(event)" >
+      <input type="text" id="phone" name="phone" placeholder="phone*" maxlength="10" onkeypress="return onlyNumberKey(event)">
+
+    </div>
+    <div>
+      <input type="password" id="password" name="password" placeholder="Password *">
+      <select id="security-question" name="security-question" >
+        <option value="">Select a question</option>
+        <option value="question1">What is your mother's pet name?</option>
+        <option value="question2">What is the name of your first pet?</option>
+        <option value="question3">What is your favorite color?</option>
+        <option value="question4">What is your birth city?</option>
+        <option value="question5">What is your favorite food?</option>
+      </select>
+    </div>
+    <div>
+      <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password *" >
+      <input type="text" id="security-answer" name="security-answer" placeholder="Security Answer *" onkeypress="return checkAlphabets(event)" >
+    </div>
+    <div>
+      <input type="radio" id="gender-male" name="gender" value="male" >
+      <label for="gender-male">Male</label>
+      <input type="radio" id="gender-female" name="gender" value="female" >
+      <label for="gender-female">Female</label>
+    </div>
+
+    <div class="captcha-container">
+      <div class="captcha-text" id="captchaText"></div><br>
+      <input type="text" id="captcha" name="captcha" placeholder="Enter Captcha" >
+      <button type="button" id="refreshCaptcha" onclick="generateCaptcha()">Refresh</button>
+    </div>
+    <button onclick="validateForm(event)">Register</button>
+  </form>
+
+
+</body>
+</html>
