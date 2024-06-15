@@ -109,3 +109,8 @@ Event and Event Handling:
     event --> an action or occurence that happens within a webpage such us user intrection
     or page loading
     event handling --> function respond to an event when it occure 
+
+Query selector:
+<!-- it select the tag based on class id use '.' to indicate class -->
+var div = document.queryselector(".ok")
+console.log(div)

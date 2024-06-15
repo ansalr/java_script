@@ -66,7 +66,16 @@
     <h1 onclick="del(event)">four</h1>
     <h1 onclick="del(event)">five</h1>
     <br>
-
+    <h2>array in javascript</h2>
+    <h2 class="oh">apple</h2>
+    <h2 class="oh">orange</h2>
+    <h2 class="oh">mango</h2>
+    <h2 class="oh">banana</h2>
+    <br>
+    <h1>append function</h1>
+    <div class="app">
+        <h1>n1</h1>
+    </div>
 
 
 
@@ -120,14 +129,27 @@
             btn.style.backgroundColor = "#3fc1a2"
         }
         function multbtn(event){
-            var h1=document.getElementById("multbtn")
-            console.log(event)
-            h1.textContent = event.target.textContent
+            var h1=document.getElementById("multbtn");
+            console.log(event);
+            h1.textContent = event.target.textContent;
         }
         function del(event){
             event.target.remove()
         }
-        
+        function arr(){
+            let arr = document.querySelectorAll(".oh")
+            for(c = 0; c<arr.length; ++c){
+                console.log(arr[c].textContent);
+                console.log(arr[c]);
+            }
+        }
+        console.log(arr())
+        function appen(){
+            let div = document.querySelectorAll(".app")
+            div.appendChild(("append sucessfull");
+            div.appendChild(("prepend sucessfull")
+        }
+        console.log(appen())
 
 
     </script>
